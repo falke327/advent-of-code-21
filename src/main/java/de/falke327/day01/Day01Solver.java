@@ -16,14 +16,20 @@ public class Day01Solver implements ProblemSolver {
         InputReader inputReader = new InputReader(inputPath);
         try {
             List<Integer> inputList = inputReader.getLinesAsInteger();
-            for (int i = 1; i < inputList.size(); i++){
-                result += (inputList.get(i) > inputList.get(i - 1)) ? 1 : 0;
-            }
+            result = countHigherDepthValues(inputList);
         } catch (IOException e) {
             log.error("Caught IOException message was: \n" + e.getMessage());
         }
 
         return String.format("%d measurements are larger than previous ones", result);
+    }
+
+    private int countHigherDepthValues(List<Integer> inputList) {
+        int result = 0;
+        for (int i = 1; i < inputList.size(); i++){
+            result += (inputList.get(i) > inputList.get(i - 1)) ? 1 : 0;
+        }
+        return result;
     }
 
     @Override
