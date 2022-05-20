@@ -9,7 +9,7 @@ import java.io.File;
 public class App {
     static Logger log = LoggerFactory.getLogger(App.class);
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         solveDay01();
     }
 
@@ -22,5 +22,6 @@ public class App {
 
         ProblemSolver day01Solver = new Day01Solver();
         System.out.println(day01Solver.solve1(absolutePath));
+        System.out.println(day01Solver.solve2(absolutePath));
     }
 }
