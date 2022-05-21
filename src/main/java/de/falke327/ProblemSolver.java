@@ -1,9 +1,7 @@
 package de.falke327;
 
-import java.io.IOException;
-
 public interface ProblemSolver {
-    public String solve1(String inputPath);
+    String solve1(final String inputPath);
 
-    public String solve2(String inputPath);
+    String solve2(final String inputPath);
 }

@@ -27,18 +27,14 @@ public class InputReaderTest {
 
         List<Integer> integerList = inputReader.getLinesAsInteger();
         assertEquals(10, integerList.size());
+
         int[] numbers = {199, 200, 208, 210, 200, 207, 240, 269, 260, 263};
         assertAll("numbers",
-                () -> assertEquals(numbers[0], integerList.get(0)),
-                () -> assertEquals(numbers[1], integerList.get(1)),
-                () -> assertEquals(numbers[2], integerList.get(2)),
-                () -> assertEquals(numbers[3], integerList.get(3)),
-                () -> assertEquals(numbers[4], integerList.get(4)),
-                () -> assertEquals(numbers[5], integerList.get(5)),
-                () -> assertEquals(numbers[6], integerList.get(6)),
-                () -> assertEquals(numbers[7], integerList.get(7)),
-                () -> assertEquals(numbers[8], integerList.get(8)),
-                () -> assertEquals(numbers[9], integerList.get(9))
+                () -> {
+                    for (int i = 0; i < numbers.length; i++) {
+                        assertEquals(numbers[i], integerList.get(i));
+                    }
+                }
         );
     }
 }
